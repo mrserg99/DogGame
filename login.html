@@ -156,7 +156,7 @@
         )
         ;
 
-
+/*
         $(document).ready(function() {
             $('#form').submit(function(e) {
                 e.preventDefault();
@@ -178,19 +178,42 @@
                     }
                 });
             });
-        });
+        });*/
+
+        function getXmlHttp() {
+            var x = false;
+            try {
+                x = new XMLHttpRequest();
+            }catch(e) {
+                try {
+                    x = new ActiveXObject("Microsoft.XMLHTTP");
+                }catch(ex) {
+                    try {
+                        req = new ActiveXObject("Msxml2.XMLHTTP");
+                    }
+                    catch(e1) {
+                        x = false;
+                    }
+                }
+            }
+            return x;
+        }
 
         /* POST-запрос */
         function log() {
             var login = document.getElementById("login").value; // Считываем значение
             var password = document.getElementById("password").value; // Считываем значение
             var xmlhttp = getXmlHttp(); // Создаём объект XMLHTTP
-            xmlhttp.open('POST', '/service/login', true); // Открываем асинхронное соединение
+            xmlhttp.open('POST', 'login', true); // Открываем асинхронное соединение
             xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
             xmlhttp.send("login=" + encodeURIComponent(login) + "&password=" + encodeURIComponent(password)); // Отправляем POST-запрос
             if (xmlhttp.readyState == 4) { // Ответ пришёл
                 if(xmlhttp.status == 200) { // Сервер вернул код 200 (что хорошо)
-                    window.open(main.html)//Открыть main
+                    if (xmlhttp.responseText == true){
+                        window.open("http://localhost:63342/Game/main.html")
+                    }
+                }else {
+                    alert("Ваш логин или пароль не верны! Попробуйте войти еще раз")
                 }
             }
         }
