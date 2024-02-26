@@ -450,6 +450,7 @@ button:hover {
 }
 
 .you:first-child {
+  transition: 1s;
   position: absolute;
   z-index: 20;
   height: 65px;
@@ -457,6 +458,7 @@ button:hover {
 }
 
 .you:hover .user_name {
+  transition: 1s;
   color: white;
   opacity: 100;
   cursor: pointer;
@@ -466,6 +468,7 @@ button:hover {
 }
 
 .you:nth-child(2) {
+  transition: 1s;
   margin-top: 60px;
   position: absolute;
   z-index: 20;
@@ -473,10 +476,12 @@ button:hover {
 }
 
 .you {
+  transition: 1s;
   text-align: right;
 }
 
 .you:nth-child(3) {
+  transition: 1s;
   margin-top: 120px;
   position: absolute;
   z-index: 20;
@@ -484,10 +489,12 @@ button:hover {
 }
 
 .player {
+  transition: 1s;
   text-align: left;
 }
 
 .player:first-child {
+  transition: 1s;
   position: absolute;
   z-index: 20;
   height: 65px;
@@ -495,6 +502,7 @@ button:hover {
 }
 
 .player:hover .user_p_name {
+  transition: 1s;
   color: white;
   opacity: 100;
   cursor: pointer;
@@ -519,16 +527,19 @@ button:hover {
 }
 
 .player:first-child {
+  transition: 1s;
   margin-top: 0;
   margin-bottom: 20px;
 }
 
 .player:nth-child(2) {
+  transition: 1s;
   margin-top: 40px !important;
   margin-bottom: 20px;
 }
 
 .player:nth-child(3) {
+  transition: 1s;
   margin-top: 40px !important;
 }
 
