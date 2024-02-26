@@ -427,7 +427,87 @@ button:hover{
   margin-top: 500px!important;
 }
 
+.user{
+  margin-left: 60px;
+  background-color: pink;
+  border-radius: 5px;
+  height: 42px;
+  width: 42px;
+}
+.user_name{
+  font-size: 20px;
+  opacity: 0;
+  margin-top: -25px;
+  z-index: 20;
+}
+.you:first-child{
+  position: absolute;
+  z-index: 20;
+  height: 65px;
+  margin-bottom: 10px;
+}
+.you:hover .user_name{
+  color: white;
+  opacity: 100;
+  cursor: pointer;
+  background-color: rgba(5,22,23,0.80);
+  border-radius: 4px;
+  padding: 8px;
+}
+.you:nth-child(2){
+  margin-top: 60px;
+  position: absolute;
+  z-index: 20;
+  height: 65px;
+}
+.you{
+  text-align: right;
+}
+.you:nth-child(3){
+  margin-top: 120px;
+  position: absolute;
+  z-index: 20;
+  height: 65px;
+}
+.player{
+  text-align: left;
+}
+.player:first-child{
+  position: absolute;
+  z-index: 20;
+  height: 65px;
+  margin-bottom: 10px;
+}
+.player:hover .user_p_name{
+  color: white;
+  opacity: 100;
+  cursor: pointer;
+  background-color: rgba(5,22,23,0.80);
+  border-radius: 4px;
+  padding: 8px;
+}
 
-
-
-
+.user_p{
+  background-color: pink;
+  border-radius: 5px;
+  height: 32px;
+  width: 32px;
+}
+.user_p_name{
+  margin-left: -5px;
+  font-size: 14px;
+  opacity: 0;
+  margin-top: -15px;
+  z-index: 20;
+}
+.player:first-child{
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.player:nth-child(2){
+  margin-top: 40px!important;
+  margin-bottom: 20px;
+}
+.player:nth-child(3){
+  margin-top: 40px!important;
+}
