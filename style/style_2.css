@@ -170,14 +170,15 @@ button:hover {
   width: 91%;
 }
 .wrapper4_field_row1 {
+  justify-content: right;
   margin-top: 55px;
-  margin-left: 61%;
   display: flex;
   gap: 41px;
+  height: 204px;
 }
 .wrapper4_field_row2 {
   margin-top: 50px;
-  height: 164px;
+  height: 204px;
   justify-content: space-between;
   display: flex;
 }
@@ -228,9 +229,19 @@ button:hover {
   display: flex;
 }
 
+.card_big:hover {
+  scale: 1;
+  background: none;
+  cursor: pointer;
+}
+
+.card_big {
+  border: none;
+  background: none;
+}
 .card_big_bonus {
   width: 96px;
-  height: 164px;
+  height: 204px;
   border-radius: 0px 0px 8px 8px;
   background: linear-gradient(180deg, rgba(234, 241, 242, 0) -0.08%, #EAF1F2 61.59%);
   backdrop-filter: blur(6px);
@@ -246,18 +257,37 @@ button:hover {
   color: white;
 }
 
+.finish:hover {
+  height: 204px;
+  scale: 1;
+  background: linear-gradient(180deg, rgba(234, 241, 242, 0) -0.08%, #EAF1F2 61.59%) !important;
+  color: #07131B !important;
+  cursor: pointer;
+}
+
 .finish {
   border-radius: 0px 0px 8px 8px;
   background: linear-gradient(180deg, rgba(234, 241, 242, 0) -0.08%, #EAF1F2 61.59%);
   backdrop-filter: blur(6px);
   width: 126px;
+  color: #07131B !important;
+  border: none !important;
 }
 .finish_text {
-  margin-left: -89px;
+  margin-left: -92px;
   margin-top: 28px;
   font-size: 48px;
   font-weight: 700;
   transform: rotate(-90deg);
+}
+
+.start:hover {
+  height: 204px;
+  scale: 1;
+  background: linear-gradient(180deg, rgba(234, 241, 242, 0) -0.08%, #EAF1F2 61.59%) !important;
+  width: 126px;
+  color: #07131B !important;
+  cursor: pointer;
 }
 
 .start {
@@ -265,13 +295,23 @@ button:hover {
   background: linear-gradient(180deg, rgba(234, 241, 242, 0) -0.08%, #EAF1F2 61.59%);
   backdrop-filter: blur(6px);
   width: 126px;
+  color: #07131B !important;
+  border: none !important;
 }
 .start_text {
-  margin-left: -90px;
+  margin-left: -92px;
   margin-top: 28px;
   font-size: 48px;
   font-weight: 700;
   transform: rotate(-90deg);
+}
+
+.card:hover {
+  height: 204px;
+  scale: 1;
+  color: #07131B !important;
+  border: none !important;
+  background: linear-gradient(180deg, rgba(234, 241, 242, 0) -0.08%, #EAF1F2 61.59%) !important;
 }
 
 .card {
@@ -279,6 +319,9 @@ button:hover {
   background: linear-gradient(180deg, rgba(234, 241, 242, 0) -0.08%, #EAF1F2 61.59%);
   backdrop-filter: blur(6px);
   width: 64px;
+  height: 204px;
+  color: #07131B !important;
+  border: none !important;
 }
 .card_bonus_img {
   width: 52px;
@@ -435,6 +478,7 @@ button:hover {
 }
 
 .user {
+  margin-top: -40px;
   margin-left: 60px;
   background-color: pink;
   border-radius: 5px;
@@ -503,10 +547,9 @@ button:hover {
 
 .player:hover .user_p_name {
   transition: 1s;
-  color: white;
+  color: #07131B;
   opacity: 100;
   cursor: pointer;
-  background-color: rgba(5, 22, 23, 0.8);
   border-radius: 4px;
   padding: 8px;
 }
@@ -541,6 +584,10 @@ button:hover {
 .player:nth-child(3) {
   transition: 1s;
   margin-top: 40px !important;
+}
+
+.nothing {
+  opacity: 0;
 }
 
 /*# sourceMappingURL=style_2.css.map */

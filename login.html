@@ -157,29 +157,35 @@
         ;
 
 
-        /* POST-запрос */
+        $(document).ready(function() {
+            $('#form').submit(function(e) {
+                e.preventDefault();
+                $.ajax({
+                    method: "POST",
+                    url: 'scripts/reg.php',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        let jsonData = JSON.parse(response);
+                        if (jsonData.success == "1")
+                        {
+                            location.href = 'games_list.html';
+                        }
+                        else
+                        {
+                            window.error.showModal();
+                            document.getElementById("error_text").innerText=jsonData.error;
+                        }
+                    }
+                });
+            });
+        });
 
-        function getXmlHttp() {
-            var xmlhttp;
-            try {
-                xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
-            } catch (e) {
-                try {
-                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                } catch (E) {
-                    xmlhttp = false;
-                }
-            }
-            if (!xmlhttp && typeof XMLHttpRequest!='undefined') {
-                xmlhttp = new XMLHttpRequest();
-            }
-            return xmlhttp;
-        }
+        /* POST-запрос */
         function log() {
             var login = document.getElementById("login").value; // Считываем значение
             var password = document.getElementById("password").value; // Считываем значение
             var xmlhttp = getXmlHttp(); // Создаём объект XMLHTTP
-            xmlhttp.open('POST', 'test.php', true); // Открываем асинхронное соединение
+            xmlhttp.open('POST', '/service/login', true); // Открываем асинхронное соединение
             xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
             xmlhttp.send("login=" + encodeURIComponent(login) + "&password=" + encodeURIComponent(password)); // Отправляем POST-запрос
             if (xmlhttp.readyState == 4) { // Ответ пришёл
