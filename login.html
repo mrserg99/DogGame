@@ -210,7 +210,7 @@
             if (xmlhttp.readyState == 4) { // Ответ пришёл
                 if(xmlhttp.status == 200) { // Сервер вернул код 200 (что хорошо)
                     if (xmlhttp.responseText == true){
-                        window.open("http://localhost:63342/Game/main.html")
+                        window.location.href = 'main.html';
                     }
                 }else {
                     alert("Ваш логин или пароль не верны! Попробуйте войти еще раз")
