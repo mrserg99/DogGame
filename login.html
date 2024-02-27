@@ -201,6 +201,7 @@
             var login = document.getElementById("login").value; // Считываем значение
             var password = document.getElementById("password").value; // Считываем значение
             var xmlhttp = getXmlHttp(); // Создаём объект XMLHTTP
+            var user_name;
             xmlhttp.open('POST', 'login', true); // Открываем асинхронное соединение
             xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
             xmlhttp.send("login=" + encodeURIComponent(login) + "&password=" + encodeURIComponent(password)); // Отправляем POST-запрос
@@ -208,6 +209,12 @@
                 if (xmlhttp.status != 200) { // анализируем HTTP-статус ответа, если статус не 200, то произошла ошибка
                     alert("Ваш логин или пароль не верны! Попробуйте войти еще раз")
                 } else { // если всё прошло гладко, выводим результат
+                   // document.getElementById("user_name").innerHTML = xmlhttp.responseText;
+                    user_name=xmlhttp.responseText;
+                    window.userName={
+                        name: user_name
+                    }
+                   // window.user_name;
                     window.location.href = 'main.html';
                 }
             }

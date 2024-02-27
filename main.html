@@ -95,7 +95,7 @@
     <a href="#" class="exit_link">Выйти из игры</a>
     <div class="frame3">
       <div class="user_pic"></div>
-      <p class="user_name">USER</p>
+      <p id="user_name" class="user_name">USER</p>
       <button onclick="single()" class="main_btn">Играть</button>
 
     </div>
@@ -183,21 +183,17 @@
   function single() {
     var send = 1;
     var xmlhttp = getXmlHttp(); // Создаём объект XMLHTTP
-    xmlhttp.open('POST', 'test.php', true); // Открываем асинхронное соединение
+    xmlhttp.open('POST', 'field', true); // Открываем асинхронное соединение
     xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
     xmlhttp.send("status=" + encodeURIComponent(send)); // Отправляем POST-запрос
     xmlhttp.onload = function () {
       if (xmlhttp.status != 200) { // анализируем HTTP-статус ответа, если статус не 200, то произошла ошибка
         alert("Oops!")
       } else { // если всё прошло гладко, выводим результат
+        document.getElementById("user_name").innerHTML = window.userName;
         window.location.href = 'game_field.html';
       }
     }
-
-
-
-
-
   }
 
 </script>
