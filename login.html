@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Прогулки с собаками</title>
+
     <link rel="shortcut icon" href="img/pawprint.png" type="image/png">
     <link rel="shortcut icon" href="img/pawprint.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -108,10 +109,6 @@
                 <input type="text" class="frame_input" id="password" placeholder="Введите парль">
             </div>
             <button onclick="log()" class="frame_btn">Войдите</button>
-            <div class="frame_subtext">
-                <h2 class="frame_subtext_text">Проблемы со входом?</h2>
-                <a href="enter.html" class="frame_subtext_link">Получить помощь</a>
-            </div>
         </div>
     <div>
         <img class="login_img" alt="&#x1F5BC;" src='img/for_background/img_1.jpg' id="image_1" style="position: absolute;" />
@@ -207,13 +204,11 @@
             xmlhttp.open('POST', 'login', true); // Открываем асинхронное соединение
             xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
             xmlhttp.send("login=" + encodeURIComponent(login) + "&password=" + encodeURIComponent(password)); // Отправляем POST-запрос
-            if (xmlhttp.readyState == 4) { // Ответ пришёл
-                if(xmlhttp.status == 200) { // Сервер вернул код 200 (что хорошо)
-                    if (xmlhttp.responseText == true){
-                        window.location.href = 'main.html';
-                    }
-                }else {
+            xmlhttp.onload = function () {
+                if (xmlhttp.status != 200) { // анализируем HTTP-статус ответа, если статус не 200, то произошла ошибка
                     alert("Ваш логин или пароль не верны! Попробуйте войти еще раз")
+                } else { // если всё прошло гладко, выводим результат
+                    window.location.href = 'main.html';
                 }
             }
         }

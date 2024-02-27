@@ -65,8 +65,13 @@
         xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
         xmlhttp.send("name=" + encodeURIComponent(a)); // Отправляем POST-запрос
         xmlhttp.onreadystatechange = function() { // Ждём ответа от сервера
-            if (xmlhttp.readyState == 4) { // Ответ пришёл
-                if(xmlhttp.status == 200) { // Сервер вернул код 200 (что хорошо)
+           /* if (xmlhttp.readyState == 4) { // Ответ пришёл
+                if(xmlhttp.status == 200) { // Сервер вернул код 200 (что хорошо)*/
+            xmlhttp.onload = function () {
+                if (xmlhttp.status != 200) { // анализируем HTTP-статус ответа, если статус не 200, то произошла ошибка
+                    alert("Oops!")
+                } else { // если всё прошло гладко, выводим результат
+
                     document.getElementById("winner").innerHTML = xmlhttp.responseText; // Выводим ответ сервера
                 }
             }
@@ -79,8 +84,11 @@
         xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
         xmlhttp.send("name=" + encodeURIComponent(a)); // Отправляем POST-запрос
         xmlhttp.onreadystatechange = function() { // Ждём ответа от сервера
-            if (xmlhttp.readyState == 4) { // Ответ пришёл
-                if(xmlhttp.status == 200) { // Сервер вернул код 200 (что хорошо)
+            xmlhttp.onload = function () {
+                if (xmlhttp.status != 200) { // анализируем HTTP-статус ответа, если статус не 200, то произошла ошибка
+                    alert("Oops!")
+                } else { // если всё прошло гладко, выводим результат
+
                     document.getElementById("numb").innerHTML = xmlhttp.responseText; // Выводим ответ сервера
                 }
             }
