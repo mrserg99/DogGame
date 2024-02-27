@@ -188,7 +188,7 @@
     xmlhttp.send("status=" + encodeURIComponent(send)); // Отправляем POST-запрос
     if (xmlhttp.readyState == 4) { // Ответ пришёл
       if(xmlhttp.status == 200) { // Сервер вернул код 200 (что хорошо)
-        window.open('./game_field.html')//Открыть field
+        window.location.href = 'game_field.html';
       }
     }
   }
